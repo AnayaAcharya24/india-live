@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArtsRouteImport } from './routes/arts'
+import { Route as CultureRouteImport } from './routes/culture'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as FestivalsRouteImport } from './routes/festivals'
+import { Route as GamingRouteImport } from './routes/gaming'
+import { Route as SportsRouteImport } from './routes/sports'
+import { Route as EventSlugRouteImport } from './routes/event.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtsRoute = ArtsRouteImport.update({
+  id: '/arts',
+  path: '/arts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CultureRoute = CultureRouteImport.update({
+  id: '/culture',
+  path: '/culture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FestivalsRoute = FestivalsRouteImport.update({
+  id: '/festivals',
+  path: '/festivals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamingRoute = GamingRouteImport.update({
+  id: '/gaming',
+  path: '/gaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsRoute = SportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventSlugRoute = EventSlugRouteImport.update({
+  id: '/event/$slug',
+  path: '/event/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/arts': typeof ArtsRoute
+  '/culture': typeof CultureRoute
+  '/events': typeof EventsRoute
+  '/festivals': typeof FestivalsRoute
+  '/gaming': typeof GamingRoute
+  '/sports': typeof SportsRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/arts': typeof ArtsRoute
+  '/culture': typeof CultureRoute
+  '/events': typeof EventsRoute
+  '/festivals': typeof FestivalsRoute
+  '/gaming': typeof GamingRoute
+  '/sports': typeof SportsRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/arts': typeof ArtsRoute
+  '/culture': typeof CultureRoute
+  '/events': typeof EventsRoute
+  '/festivals': typeof FestivalsRoute
+  '/gaming': typeof GamingRoute
+  '/sports': typeof SportsRoute
+  '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/arts'
+    | '/culture'
+    | '/events'
+    | '/festivals'
+    | '/gaming'
+    | '/sports'
+    | '/event/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/arts'
+    | '/culture'
+    | '/events'
+    | '/festivals'
+    | '/gaming'
+    | '/sports'
+    | '/event/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/arts'
+    | '/culture'
+    | '/events'
+    | '/festivals'
+    | '/gaming'
+    | '/sports'
+    | '/event/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArtsRoute: typeof ArtsRoute
+  CultureRoute: typeof CultureRoute
+  EventsRoute: typeof EventsRoute
+  FestivalsRoute: typeof FestivalsRoute
+  GamingRoute: typeof GamingRoute
+  SportsRoute: typeof SportsRoute
+  EventSlugRoute: typeof EventSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/arts': {
+      id: '/arts'
+      path: '/arts'
+      fullPath: '/arts'
+      preLoaderRoute: typeof ArtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/culture': {
+      id: '/culture'
+      path: '/culture'
+      fullPath: '/culture'
+      preLoaderRoute: typeof CultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/festivals': {
+      id: '/festivals'
+      path: '/festivals'
+      fullPath: '/festivals'
+      preLoaderRoute: typeof FestivalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gaming': {
+      id: '/gaming'
+      path: '/gaming'
+      fullPath: '/gaming'
+      preLoaderRoute: typeof GamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports': {
+      id: '/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof SportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event/$slug': {
+      id: '/event/$slug'
+      path: '/event/$slug'
+      fullPath: '/event/$slug'
+      preLoaderRoute: typeof EventSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArtsRoute: ArtsRoute,
+  CultureRoute: CultureRoute,
+  EventsRoute: EventsRoute,
+  FestivalsRoute: FestivalsRoute,
+  GamingRoute: GamingRoute,
+  SportsRoute: SportsRoute,
+  EventSlugRoute: EventSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
