@@ -18,7 +18,7 @@ export function useScrollMotion(scope: RefObject<HTMLElement | null>) {
         gsap.fromTo(el, { scale: 1.18 }, { scale: 1, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: true } });
       });
       gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
-        const amt = Number(el.dataset.parallax || 12);
+        const amt = Number(el.dataset["parallax"] || 12);
         gsap.fromTo(el, { yPercent: amt }, { yPercent: -amt, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
       });
     });

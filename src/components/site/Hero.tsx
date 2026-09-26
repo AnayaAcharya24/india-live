@@ -92,7 +92,7 @@ export function Hero() {
         // intro
         gsap.from(texts.current[0]!.querySelectorAll("[data-line]"), { yPercent: 110, duration: 1, stagger: 0.1, ease: "power4.out", delay: 0.15 });
         gsap.from(texts.current[0]!.querySelectorAll("[data-fade]"), { autoAlpha: 0, y: 18, duration: 0.7, stagger: 0.06, delay: 0.45 });
-        gsap.from(imgs.current[0], { x: 160, y: -60, autoAlpha: 0, duration: 1.3, ease: "power3.out" });
+        gsap.from(imgs.current[0]!, { x: 160, y: -60, autoAlpha: 0, duration: 1.3, ease: "power3.out" });
         st.current = ScrollTrigger.create({
           trigger: root.current,
           start: "top top",

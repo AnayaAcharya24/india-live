@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export function PageHero({ eyebrow, title, text, img, children }: { eyebrow: string; title: string; text?: string; img?: string; children?: ReactNode }) {
+export function PageHero({ eyebrow, title, text, img, children }: { eyebrow: string; title: string; text?: string; img?: string | undefined; children?: ReactNode }) {
   return (
     <section className="grain relative overflow-hidden bg-ink text-ink-foreground">
       {img && (
