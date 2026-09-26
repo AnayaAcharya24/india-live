@@ -11,10 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtsRouteImport } from './routes/arts'
+import { Route as AthletesRouteImport } from './routes/athletes'
 import { Route as CultureRouteImport } from './routes/culture'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as FestivalsRouteImport } from './routes/festivals'
 import { Route as GamingRouteImport } from './routes/gaming'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as OrganizersRouteImport } from './routes/organizers'
 import { Route as SportsRouteImport } from './routes/sports'
 import { Route as EventSlugRouteImport } from './routes/event.$slug'
 
@@ -26,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const ArtsRoute = ArtsRouteImport.update({
   id: '/arts',
   path: '/arts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AthletesRoute = AthletesRouteImport.update({
+  id: '/athletes',
+  path: '/athletes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CultureRoute = CultureRouteImport.update({
@@ -48,6 +57,21 @@ const GamingRoute = GamingRouteImport.update({
   path: '/gaming',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizersRoute = OrganizersRouteImport.update({
+  id: '/organizers',
+  path: '/organizers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SportsRoute = SportsRouteImport.update({
   id: '/sports',
   path: '/sports',
@@ -62,20 +86,28 @@ const EventSlugRoute = EventSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/arts': typeof ArtsRoute
+  '/athletes': typeof AthletesRoute
   '/culture': typeof CultureRoute
   '/events': typeof EventsRoute
   '/festivals': typeof FestivalsRoute
   '/gaming': typeof GamingRoute
+  '/login': typeof LoginRoute
+  '/news': typeof NewsRoute
+  '/organizers': typeof OrganizersRoute
   '/sports': typeof SportsRoute
   '/event/$slug': typeof EventSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/arts': typeof ArtsRoute
+  '/athletes': typeof AthletesRoute
   '/culture': typeof CultureRoute
   '/events': typeof EventsRoute
   '/festivals': typeof FestivalsRoute
   '/gaming': typeof GamingRoute
+  '/login': typeof LoginRoute
+  '/news': typeof NewsRoute
+  '/organizers': typeof OrganizersRoute
   '/sports': typeof SportsRoute
   '/event/$slug': typeof EventSlugRoute
 }
@@ -83,10 +115,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/arts': typeof ArtsRoute
+  '/athletes': typeof AthletesRoute
   '/culture': typeof CultureRoute
   '/events': typeof EventsRoute
   '/festivals': typeof FestivalsRoute
   '/gaming': typeof GamingRoute
+  '/login': typeof LoginRoute
+  '/news': typeof NewsRoute
+  '/organizers': typeof OrganizersRoute
   '/sports': typeof SportsRoute
   '/event/$slug': typeof EventSlugRoute
 }
@@ -95,30 +131,42 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/arts'
+    | '/athletes'
     | '/culture'
     | '/events'
     | '/festivals'
     | '/gaming'
+    | '/login'
+    | '/news'
+    | '/organizers'
     | '/sports'
     | '/event/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/arts'
+    | '/athletes'
     | '/culture'
     | '/events'
     | '/festivals'
     | '/gaming'
+    | '/login'
+    | '/news'
+    | '/organizers'
     | '/sports'
     | '/event/$slug'
   id:
     | '__root__'
     | '/'
     | '/arts'
+    | '/athletes'
     | '/culture'
     | '/events'
     | '/festivals'
     | '/gaming'
+    | '/login'
+    | '/news'
+    | '/organizers'
     | '/sports'
     | '/event/$slug'
   fileRoutesById: FileRoutesById
@@ -126,10 +174,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArtsRoute: typeof ArtsRoute
+  AthletesRoute: typeof AthletesRoute
   CultureRoute: typeof CultureRoute
   EventsRoute: typeof EventsRoute
   FestivalsRoute: typeof FestivalsRoute
   GamingRoute: typeof GamingRoute
+  LoginRoute: typeof LoginRoute
+  NewsRoute: typeof NewsRoute
+  OrganizersRoute: typeof OrganizersRoute
   SportsRoute: typeof SportsRoute
   EventSlugRoute: typeof EventSlugRoute
 }
@@ -148,6 +200,13 @@ declare module '@tanstack/react-router' {
       path: '/arts'
       fullPath: '/arts'
       preLoaderRoute: typeof ArtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/athletes': {
+      id: '/athletes'
+      path: '/athletes'
+      fullPath: '/athletes'
+      preLoaderRoute: typeof AthletesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/culture': {
@@ -178,6 +237,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GamingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organizers': {
+      id: '/organizers'
+      path: '/organizers'
+      fullPath: '/organizers'
+      preLoaderRoute: typeof OrganizersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sports': {
       id: '/sports'
       path: '/sports'
@@ -198,10 +278,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArtsRoute: ArtsRoute,
+  AthletesRoute: AthletesRoute,
   CultureRoute: CultureRoute,
   EventsRoute: EventsRoute,
   FestivalsRoute: FestivalsRoute,
   GamingRoute: GamingRoute,
+  LoginRoute: LoginRoute,
+  NewsRoute: NewsRoute,
+  OrganizersRoute: OrganizersRoute,
   SportsRoute: SportsRoute,
   EventSlugRoute: EventSlugRoute,
 }
