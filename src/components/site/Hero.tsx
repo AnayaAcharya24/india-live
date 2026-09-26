@@ -157,14 +157,14 @@ export function Hero() {
                 ref={(el) => {
                   texts.current[i] = el;
                 }}
-                className="absolute inset-x-0 top-0 max-w-[720px]"
+                className="absolute inset-x-0 top-0 max-w-[860px]"
                 style={{ visibility: i === 0 ? "visible" : "hidden" }}
                 aria-hidden={i !== idx}
               >
                 <p data-fade className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold">
                   <span className="h-px w-8 bg-primary" /> {s.kicker}
                 </p>
-                <h1 className="font-display text-[15vw] sm:text-[12vw] md:text-[8.4vw] xl:text-[132px]">
+                <h1 className="font-display text-[15vw] sm:text-[12vw] md:text-[6.6vw] xl:text-[108px]">
                   {s.lines.map((l, j) => (
                     <span key={l} className="block overflow-hidden pb-[0.04em]">
                       <span data-line className={`block ${j === s.lines.length - 1 ? "text-primary" : ""}`}>{l}</span>
@@ -188,7 +188,7 @@ export function Hero() {
           </div>
 
           {/* controls */}
-          <div className="relative z-10 mb-6 mt-auto flex items-center gap-4 md:mb-0">
+          <div className="relative z-10 mb-24 mt-auto flex items-center gap-4 md:mb-0">
             <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-12 w-12 place-items-center border border-ink-border transition-colors hover:border-primary hover:bg-primary">
               <ArrowLeft className="h-5 w-5" />
             </button>
