@@ -47,6 +47,7 @@ function Home() {
   const ref = useRef<HTMLDivElement>(null);
   useScrollMotion(ref);
   const featured = events.slice(0, 5);
+  const lead = stories[0]!;
 
   return (
     <div ref={ref}>
@@ -226,10 +227,10 @@ function Home() {
         <div className="grid gap-10 md:grid-cols-12">
           <Link to="/news" data-reveal className="group md:col-span-7">
             <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-              <img src={stories[0].img} alt={stories[0].title} width={stories[0].w} height={stories[0].h} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <img src={lead.img} alt={lead.title} width={lead.w} height={lead.h} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
             </div>
-            <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">{stories[0].category} · {stories[0].date}</p>
-            <h3 className="mt-3 max-w-2xl font-display text-4xl md:text-6xl">{stories[0].title}</h3>
+            <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">{lead.category} · {lead.date}</p>
+            <h3 className="mt-3 max-w-2xl font-display text-4xl md:text-6xl">{lead.title}</h3>
           </Link>
           <div className="md:col-span-5 md:border-l md:pl-10">
             {stories.slice(1).map((s) => (

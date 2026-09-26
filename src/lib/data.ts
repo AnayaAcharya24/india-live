@@ -63,10 +63,10 @@ export const events: SacEvent[] = [
 export const featuredSlugs = events.slice(0, 5).map((e) => e.slug);
 
 export const live = [
-  { label: "LIVE", event: events[5], meta: "2nd half · 1–1" },
-  { label: "TODAY", event: events[6], meta: "Starts 6:00 PM" },
-  { label: "UPCOMING", event: events[7], meta: "In 3 weeks" },
-  { label: "TRENDING", event: events[3], meta: "2.4k registered" },
+  { label: "LIVE", event: events[5]!, meta: "2nd half · 1–1" },
+  { label: "TODAY", event: events[6]!, meta: "Starts 6:00 PM" },
+  { label: "UPCOMING", event: events[7]!, meta: "In 3 weeks" },
+  { label: "TRENDING", event: events[3]!, meta: "2.4k registered" },
 ];
 
 export const stories = [
