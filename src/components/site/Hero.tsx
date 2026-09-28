@@ -176,14 +176,20 @@ export function Hero() {
                 <p data-fade className="mt-4 max-w-[380px] text-[15px] leading-relaxed text-ink-muted md:text-base">
                   {s.text}
                 </p>
-                <div data-fade className="mt-7">
-                  <Link to={s.to} className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-primary-foreground">
-                    {s.cta}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
               </div>
             ))}
+          </div>
+
+          {/* fixed CTAs */}
+          <div className="relative z-10 -mt-16 flex flex-wrap items-center gap-3 sm:-mt-20">
+            <Link to="/events" className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-primary-foreground">
+              Explore events
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <a href="#now" className="group inline-flex items-center gap-3 border border-ink-border px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-ink-foreground transition-colors hover:border-primary">
+              What's happening now
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
 
           {/* controls */}
