@@ -149,7 +149,7 @@ export function Hero() {
 
         {/* text */}
         <div className="relative mx-auto flex h-full max-w-[1480px] flex-col px-5 pt-24 md:px-8 md:pt-32">
-          <div className="relative min-h-[400px] sm:min-h-[440px] md:min-h-[470px] xl:min-h-[500px]">
+          <div className="relative min-h-[360px] sm:min-h-[390px] md:min-h-[410px] xl:min-h-[440px]">
             {slides.map((s, i) => (
               <div
                 key={s.kicker}
@@ -181,7 +181,7 @@ export function Hero() {
           </div>
 
           {/* controls */}
-          <div className="relative z-10 -mt-16 flex items-center gap-3 sm:-mt-20">
+          <div className="relative z-10 mt-2 flex items-center gap-3">
             <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
               <ArrowLeft className="h-5 w-5" />
             </button>
