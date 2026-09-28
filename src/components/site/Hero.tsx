@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import heroSports from "@/assets/hero-sports.png";
 import heroArts from "@/assets/hero-arts.png";
 import heroCulture from "@/assets/hero-culture.png";
-import { SearchBar } from "./SearchBar";
 
 const slides = [
   { kicker: "Sports × Gaming", lines: ["Find your next", "challenge."], tag: "Where every move matters.", text: "From stadiums to gaming arenas, discover competitions, tournaments and experiences across India.", cta: "Explore sports", to: "/sports", img: heroSports, alt: "Indian sprinter in red kit holding a game controller" },
@@ -150,7 +149,7 @@ export function Hero() {
 
         {/* text */}
         <div className="relative mx-auto flex h-full max-w-[1480px] flex-col px-5 pt-24 md:px-8 md:pt-32">
-          <div className="relative min-h-[46svh] md:min-h-0 md:flex-1">
+          <div className="relative min-h-[400px] sm:min-h-[440px] md:min-h-[470px] xl:min-h-[500px]">
             {slides.map((s, i) => (
               <div
                 key={s.kicker}
@@ -188,14 +187,14 @@ export function Hero() {
           </div>
 
           {/* controls */}
-          <div className="relative z-10 mb-24 mt-auto flex items-center gap-4 md:mb-0">
-            <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-12 w-12 place-items-center border border-ink-border transition-colors hover:border-primary hover:bg-primary">
+          <div className="relative z-10 mt-6 flex items-center gap-3">
+            <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
               <ArrowLeft className="h-5 w-5" />
             </button>
-            <button onClick={() => go(1)} aria-label="Next slide" className="grid h-12 w-12 place-items-center border border-ink-border transition-colors hover:border-primary hover:bg-primary">
+            <button onClick={() => go(1)} aria-label="Next slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
               <ArrowRight className="h-5 w-5" />
             </button>
-            <p className="ml-2 font-display text-2xl tabular-nums">
+            <p className="ml-2 font-display text-xl tabular-nums text-ink-foreground">
               0{idx + 1} <span className="text-ink-muted">/ 03</span>
             </p>
             <div className="ml-2 hidden h-px w-40 bg-ink-border sm:block">
@@ -203,14 +202,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative z-10 hidden pb-8 pt-6 md:block">
-            <SearchBar />
-          </div>
         </div>
       </section>
-      <div className="bg-ink px-5 pb-8 pt-2 md:hidden">
-        <SearchBar />
-      </div>
     </>
   );
 }
