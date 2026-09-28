@@ -181,7 +181,7 @@ export function Hero() {
           </div>
 
           {/* controls */}
-          <div className="relative z-10 mt-2 flex items-center gap-3">
+          <div className="relative z-10 -mt-16 flex items-center gap-3 md:-mt-12">
             <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
               <ArrowLeft className="h-5 w-5" />
             </button>
