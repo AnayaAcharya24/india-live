@@ -180,8 +180,21 @@ export function Hero() {
             ))}
           </div>
 
+          {/* controls */}
+          <div className="relative z-10 -mt-16 flex items-center gap-3 sm:-mt-20">
+            <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+            <p className="px-1 font-display text-xl tabular-nums text-ink-foreground">
+              0{idx + 1} <span className="text-ink-muted">/ 03</span>
+            </p>
+            <button onClick={() => go(1)} aria-label="Next slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          </div>
+
           {/* fixed CTAs */}
-          <div className="relative z-10 -mt-16 flex flex-wrap items-center gap-3 sm:-mt-20">
+          <div className="relative z-10 mt-5 flex flex-wrap items-center gap-3">
             <Link to="/events" className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-primary-foreground">
               Explore events
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -192,21 +205,6 @@ export function Hero() {
             </a>
           </div>
 
-          {/* controls */}
-          <div className="relative z-10 mt-6 flex items-center gap-3">
-            <button onClick={() => go(-1)} aria-label="Previous slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
-              <ArrowLeft className="h-5 w-5" />
-            </button>
-            <button onClick={() => go(1)} aria-label="Next slide" className="grid h-10 w-10 place-items-center border border-ink-border bg-ink-foreground/5 transition-colors hover:border-primary hover:bg-primary">
-              <ArrowRight className="h-5 w-5" />
-            </button>
-            <p className="ml-2 font-display text-xl tabular-nums text-ink-foreground">
-              0{idx + 1} <span className="text-ink-muted">/ 03</span>
-            </p>
-            <div className="ml-2 hidden h-px w-40 bg-ink-border sm:block">
-              <div className="h-px bg-primary transition-[width] duration-700" style={{ width: `${((idx + 1) / 3) * 100}%` }} />
-            </div>
-          </div>
 
         </div>
       </section>
